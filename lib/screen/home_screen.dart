@@ -30,14 +30,27 @@ class HomeScreen extends StatelessWidget {
 class _DDay extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+
+    // 테마 불러오기
+    final textTheme = Theme.of(context).textTheme;
+
     return Column(
       children: [
         const SizedBox(height: 16.0,),                // padding을 안쓰는 이유는?
-        Text('U & I'),
+        Text(
+          'U & I',
+          style: textTheme.headline1,
+        ),
 
         Padding(padding: EdgeInsets.only(top: 16.0)), // 위에 SizedBox랑 padding중에 무엇을 선택해야 할까.
-        Text('The day we met first !'),
-        Text('2017.05.27'),
+        Text(
+          'The day we met first !',
+          style: textTheme.bodyText1,
+        ),
+        Text(
+          '2017.05.27',
+          style: textTheme.bodyText2,
+        ),
 
         const SizedBox(height: 16.0,),
         IconButton(
@@ -49,7 +62,10 @@ class _DDay extends StatelessWidget {
         ),
 
         const SizedBox(height: 16.0,),
-        Text('D + 365'),
+        Text(
+          'D + 365',
+          style: textTheme.headline1,
+        ),
       ],
     );
   }
@@ -58,6 +74,15 @@ class _DDay extends StatelessWidget {
 class _CoupleImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    return Expanded(
+      child: Center(
+        child: Image.asset(
+          'asset/img/middle_image.png',
+          // height: MediaQuery.of(context).size.height / 2,
+        ),
+      )
+    );
+
     return Center(
       child: Image.asset(
         'asset/img/middle_image.png',
